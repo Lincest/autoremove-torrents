@@ -12,7 +12,14 @@ my_task:
   password: 
   strategies:
     my_strategy:
-      remove: seeding_time > 604800 or (size > 20 and size < 30 and seeding_time > 259200) or (size > 40 and size < 50 and seeding_time > 432000) or (size > 30 and size < 40 and seeding_time > 345600) or (size > 10 and size < 20 and seeding_time > 172800) or ratio > 10 # 345600: 4day
+      remove: ' 
+        (size < 10 and seeding_time > 86400) or 
+        (size > 10 and size < 20 and seeding_time > 172800) or 
+        (size > 20 and size < 30 and seeding_time > 259200) or 
+        (size > 30 and size < 40 and seeding_time > 345600) or 
+        (size > 40 and size < 50 and seeding_time > 432000) or 
+        seeding_time > 604800 or 
+        ratio > 10 '
   delete_data: true
 ```
 
